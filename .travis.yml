@@ -5,6 +5,12 @@ script:
   - node --version
   - yarn --version
   - yarn run test
+before_deploy:
+  - yarn run build
+deploy:
+  provider: surge
+  project: ./build/
+  domain: http://deserted-belief.surge.sh/
 notifications:
   email:
     on_failure: change
