@@ -11,6 +11,7 @@ deploy:
   provider: surge
   project: ./build/
   domain: http://deserted-belief.surge.sh/
+  skip_cleanup: true
 notifications:
   email:
     on_failure: change
