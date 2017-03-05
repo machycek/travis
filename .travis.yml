@@ -15,3 +15,6 @@ notifications:
   email:
     on_failure: change
 cache: yarn
+env:
+  -SURGE_LOGIN="m.machycek@gmail.com"
+  -SURGE_TOKEN="3f436df89949240072c99a44ef6531a6"
