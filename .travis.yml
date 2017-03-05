@@ -5,7 +5,16 @@ script:
   - node --version
   - yarn --version
   - yarn run test
+before_deploy:
+  - yarn run build
+deploy:
+  provider: surge
+  project: ./build/
+  domain: http://deserted-belief.surge.sh/
 notifications:
   email:
     on_failure: change
 cache: yarn
+env:
+  -SURGE_LOGIN="m.machycek@gmail.com"
+  -SURGE_TOKEN="3f436df89949240072c99a44ef6531a6"
